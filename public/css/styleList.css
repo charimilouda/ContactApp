@@ -1,0 +1,29 @@
+/* Change la couleur du titre "Contact" */
+.text-primary {
+    color: #2471a3 !important;
+}
+
+/* Change la couleur de l'icône d'ajout */
+.btn-primary {
+    background-color: #2471a3 !important; /* Fond bleu */
+    border-color: #2471a3 !important; /* Assure que le bord du bouton est aussi bleu */
+}
+
+/* Change la couleur de l'icône d'ajout */
+.btn-primary i {
+    color: white !important;
+}
+
+/* Style de l'icône de déconnexion */
+.btn-danger {
+    background-color:rgb(218, 136, 101) !important;
+    border-color:rgb(218, 136, 101) !important;
+}
+
+.btn-danger i {
+    color: white !important;
+}
+
+#search-bar {
+    border-color: #2471a3 !important;
+}

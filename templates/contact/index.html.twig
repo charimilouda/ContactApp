@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Contacts!{% endblock %}
+
+{% block body %}
+<div class="container my-4 p-4 border rounded">
+    <!-- Section supérieure -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+        <!-- Titre -->
+        <h2 class="text-primary mb-0">Contact</h2>
+
+        <!-- Barre de recherche -->
+        <div class="flex-grow-1 d-flex justify-content-center">
+            <input id="search-bar" type="text" placeholder="Rechercher un contact..." 
+                class="form-control w-100" style="max-width: 300px;">
+        </div>
+
+        <!-- Bouton d'ajout -->
+        <a href="{{ path('app_contact_add') }}" class="btn btn-primary">
+            <i class="fas fa-plus"></i>
+        </a>
+        
+        <!-- Icône de déconnexion -->
+        <a href="{{ path('app_logout') }}" class="btn btn-danger" onclick="return confirmLogout()">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+    </div>
+
+    <!-- Section des contacts -->
+    <div id="contact-list" class="bg-light p-3 rounded">
+        <div class="row g-4">
+            {% for contact in contacts %}
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card h-100 shadow-sm p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- Infos du contact -->
+                            <a href="{{ path('app_contact_details', { 'id': contact.id }) }}" class="text-decoration-none text-dark">
+                                <div>
+                                    <h5 class="mb-1">{{ contact.nom }}</h5>
+                                    <p class="mb-0 text-muted">{{ contact.telephone }}</p>
+                                </div>
+                            </a>
+
+                            <!-- Actions (Edit & Delete) -->
+                            <div class="d-flex gap-2">
+                                <a href="{{ path('app_contact_update', { id: contact.id }) }}" class="text-success fs-5">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+
+                                <form action="{{ path('app_contact_delete', { id: contact.id }) }}" method="POST" class="mb-0">
+                                    <button type="submit" class="btn btn-link text-danger p-0" onclick="return confirmDelete()">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Script pour la recherche dynamique -->
+<script type="text/javascript">
+    document.getElementById('search-bar').addEventListener('input', function () {
+        const query = this.value.toLowerCase();
+        const contactCards = document.querySelectorAll('.card');
+
+        contactCards.forEach(card => {
+            const name = card.querySelector('h5').textContent.toLowerCase();
+            if (name.startsWith(query)) {
+                card.style.display = 'flex'; // Affiche les cartes correspondant à la recherche
+            } else {
+                card.style.display = 'none'; // Masque les autres cartes
+            }
+        });
+    });
+
+    function confirmDelete() {
+        return confirm("Êtes-vous sûr de vouloir supprimer ce contact ?");
+    }
+
+    function confirmLogout() {
+        return confirm("Êtes-vous sûr de vouloir vous déconnecter ?");
+    }
+</script>
+
+{% endblock %}

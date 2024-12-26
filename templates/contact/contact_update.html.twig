@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Contact{% endblock %}
+
+{% block body %}
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f8f9fa;">
+    <div class="contact-container" style="border: 1px solid #ccc; border-radius: 10px; padding: 20px; width: 100%; max-width: 500px; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="contact-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <!-- Icône pour revenir -->
+            <a href="{{ path('app_contact_list') }}" style="color: #2471a3; text-decoration: none;">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+
+            <!-- Titre -->
+            <h2 style="margin: 0; text-align: center; color: #1f618d; flex-grow: 1;">Modifier Contact</h2>
+        </div>
+
+        <form action="{{ path('app_contact_update', { id: contact.id }) }}" method="POST">
+            <div style="margin-bottom: 15px;">
+                <label for="nom" style="display: block;">Nom<span style="color:red">*</span></label>
+                <input type="text" id="nom" name="nom" value="{{ contact.nom }}" required placeholder="Entrer le nom ..." style="width: 95%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="prenom" style="display: block;">Prénom</label>
+                <input type="text" id="prenom" name="prenom" value="{{ contact.prenom }}" placeholder="Entrer le prénom ..." style="width: 95%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="email" style="display: block;">Email</label>
+                <input type="email" id="email" name="email" value="{{ contact.email }}" placeholder="Entrer l'email ..." style="width: 95%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="telephone" style="display: block;">Téléphone</label>
+                <input type="tel" id="telephone" name="telephone" value="{{ contact.telephone }}" placeholder="Entrer le téléphone ..." style="width: 95%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="entreprise" style="display: block;">Entreprise</label>
+                <input type="text" id="entreprise" name="entreprise" value="{{ contact.entreprise }}" placeholder="Entrer l'entreprise ..." style="width: 95%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            </div>
+            <button type="submit" style="background-color: #2471a3; color: white; padding: 10px 15px; border-radius: 5px; border: none; cursor: pointer; width: 100%;">
+                Sauvegarder
+                <i class="fas fa-arrow-right" style="margin-left: 10px"></i>
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

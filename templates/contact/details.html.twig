@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails du contact{% endblock %}
+
+{% block body %}
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f9f9f9; margin: 0;">
+    <div style="padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 400px;">
+        <div class="contact-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <!-- Icone pour revenir -->
+            <a href="{{ path('app_contact_list') }}" style="color: #2471a3 ; text-decoration: none;">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+
+            <!-- Titre -->
+            <h2 style="margin: 0; text-align: center; color:#1f618d; flex-grow: 1;">Détail du contact</h2>
+        </div>
+        <div>
+            <p><strong>Nom :</strong> {{ contact.nom }}</p>
+            <p><strong>Prénom :</strong> {{ contact.prenom }}</p>
+            <p><strong>Email :</strong> <a href="mailto:{{ contact.email }}" style="color: #1f618d;">{{ contact.email }}</a></p>
+            <p><strong>Téléphone :</strong> <a href="tel:{{ contact.telephone }}" style="color: #1f618d;">{{ contact.telephone }}</a></p>
+            <p><strong>Entreprise :</strong> {{ contact.entreprise }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

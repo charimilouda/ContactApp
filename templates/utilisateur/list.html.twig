@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %} {# Hérite d'un fichier de base si vous avez un layout commun #}
+
+{% block title %}Liste des utilisateurs{% endblock %}
+
+{% block body %}
+<h1 class="page-title">Liste des utilisateurs</h1>
+
+<!-- Bouton d'ajout d'un utilisateur -->
+<a href="{{ path('app_utilisateur_add') }}" class="btn-add">Ajouter un utilisateur</a>
+
+<table class="user-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for utilisateur in utilisateurs %}
+            <tr>
+                <td>{{ utilisateur.id }}</td>
+                <td>{{ utilisateur.nom }}</td>
+                <td>{{ utilisateur.prenom }}</td>
+                <td>{{ utilisateur.email }}</td>
+                <td class="actions">
+                    <form action="{{ path('app_utilisateur_delete', { id: utilisateur.id }) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="btn-delete">Supprimer</button>
+                    </form>
+                    <a href="{{ path('app_utilisateur_update', { id: utilisateur.id }) }}" class="btn-edit">Modifier</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+

@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter Contact{% endblock %}
+
+{% block body %}
+<!-- Conteneur global centré -->
+<div style="display: flex; justify-content: center; align-items: center; min-height: 100vh; ">
+
+    <div class="contact-container" style="width: 60%; max-width: 600px; background-color: white; border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
+        <!-- Section de l'en-tête -->
+        <div class="contact-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <!-- Icone pour revenir -->
+            <a href="{{ path('app_contact_list') }}" style="color: #2471a3; text-decoration: none;">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+
+            <!-- Titre -->
+            <h2 style="margin: 0; text-align: center; color: #1f618d; flex-grow: 1;">Ajouter Contact</h2>
+        </div>
+
+        <!-- Formulaire de création de contact -->
+        <div style="background-color: white; border-radius: 10px; padding: 20px;">
+            {{ form_start(form, {'attr': {'style': 'width: 100%;'}}) }}
+            
+            <!-- Affichage des erreurs globales -->
+            {{ form_errors(form) }}
+
+            <!-- Champs du formulaire -->
+            <div style="margin-bottom: 15px;">
+                <div style="margin-bottom: 15px;">
+                <label for="{{ form.nom.vars.id }}" style="display: block;">
+                    <!-- Ajout de l'astérisque rouge -->
+                    Nom
+                    <span style="color: red; font-size: 18px;">*</span> 
+                    
+                </label>                {{ form_widget(form.nom, {'attr': {'style': 'width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;', 'placeholder': 'Entrez le Nom'}}) }}
+                {{ form_errors(form.nom) }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                {{ form_label(form.prenom, 'Prénom', {'label_attr': {'style': 'display: block;'}}) }}
+                {{ form_widget(form.prenom, {'attr': {'style': 'width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;', 'placeholder': 'Entrez le prenom '}}) }}
+                {{ form_errors(form.prenom) }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                {{ form_label(form.email, 'Email', {'label_attr': {'style': 'display: block;'}}) }}
+                {{ form_widget(form.email, {'attr': {'style': 'width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;', 'placeholder': 'Entrez l\'email'}}) }}
+                {{ form_errors(form.email) }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                {{ form_label(form.telephone, 'Téléphone', {'label_attr': {'style': 'display: block;'}}) }}
+                {{ form_widget(form.telephone, {'attr': {'style': 'width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;', 'placeholder': 'Entrez le numéro de téléphone '}}) }}
+                {{ form_errors(form.telephone) }}
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                {{ form_label(form.entreprise, 'Entreprise', {'label_attr': {'style': 'display: block;'}}) }}
+                {{ form_widget(form.entreprise, {'attr': {'style': 'width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;', 'placeholder': 'Entrez le nom de l\'entreprise'}}) }}
+                {{ form_errors(form.entreprise) }}
+            </div>
+
+            <!-- Champ caché pour utilisateurid -->
+            <div style="display: none;">
+                {{ form_row(form.utilisateurid, {'label': false}) }}
+            </div>
+
+            <!-- Bouton Sauvegarder -->
+            <button type="submit" style="background-color: #2471a3; color: white; padding: 10px 15px; border-radius: 5px; border: none; cursor: pointer;">
+                Sauvegarder  
+                <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+            </button>
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

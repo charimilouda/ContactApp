@@ -1,0 +1,204 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Style du titre de la page */
+.page-title {
+    text-align: center;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Style du bouton d'ajout */
+.btn-add {
+    display: inline-block;
+    background-color: #64A9FF;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-add:hover {
+    background-color: #45a049;
+}
+
+/* Style du tableau */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-table th, .user-table td {
+    padding: 12px 20px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.user-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #E2EAF4;
+}
+
+.user-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Style des boutons d'action */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-delete, .btn-edit {
+    padding: 6px 12px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+.btn-edit {
+    background-color: #f39c12;
+}
+
+.btn-edit:hover {
+    background-color: #e67e22;
+}
+
+
+
+
+
+
+
+
+
+
+/*login page style */
+/* Appliquer un style global pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+/* Container qui va centrer tout le contenu verticalement et horizontalement */
+.login-container {
+    display: flex;
+    justify-content: center;  /* Centre horizontalement */
+    align-items: center;      /* Centre verticalement */
+    height: 100vh;            /* Hauteur minimale 100% de la fenêtre */
+}
+
+/* Formulaire de connexion avec un conteneur propre */
+.login-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Limite la largeur du formulaire à 400px */
+}
+
+/* Titre du formulaire centré */
+h1.text-center {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2471a3;
+}
+
+/* Style des alertes */
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* Formulaire */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style pour le bouton de soumission */
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #2471a3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+/* Style du lien d'inscription */
+.signup-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.signup-link a {
+    color: #2471a3;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/*register style */
+
+/* Messages d'alerte */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
