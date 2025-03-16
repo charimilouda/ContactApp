@@ -26,7 +26,7 @@ L'objectif principal de ce projet est de fournir une **interface simple et fonct
 4. Actions possibles : Ajouter, Modifier, Supprimer, Rechercher un contact.
 
 ## 📌 Remarque
-Ce projet constitue ma **première expérience avec Symfony**. J'ai préféré commencer par un projet simple afin de bien comprendre les bases du framework. Maintenant, je suis prêt(e) à travailler sur des projets plus ambitieux et à exploiter pleinement ses capacités.
+Ce projet constitue ma **première expérience avec Symfony**. J'ai préféré commencer par un projet simple afin de bien comprendre les bases du framework. Maintenant, je suis prête à travailler sur des projets plus ambitieux et à exploiter pleinement ses capacités.
 
 ## 📬 Me Contacter
 📧 **Email** : charimilouda@gmail.com  
